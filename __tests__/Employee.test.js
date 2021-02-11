@@ -11,3 +11,15 @@ test("Can set employee name using Employee constructor", () => {
 
     expect(emp.name).toBe(name);
 });
+test("Can set employee id using Employee constructor", () => {
+    const name = "Alex";
+    const emp = new Employee(name);
+
+    expect(emp.name).toBe(name);
+});
+test("Can set employee email using Employee constructor", () => {
+    const name = "Alex";
+    const emp = new Employee(name);
+
+    expect(emp.name).toBe(name);
+});
