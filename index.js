@@ -21,7 +21,7 @@
 		{
 			type: "list",
 			message: "Which team member would you like to add?",
-			name: "role"
+			name: "role",
 			choices: ["Engineer, Intern, No more team members"]
 		}
 	])
@@ -64,6 +64,7 @@
 					type: "",
 					message: "",
 					name: "",
+					choices: "",
 				}
 			])
 	}
@@ -95,20 +96,14 @@
 					type: "",
 					message: "",
 					name: "",
+					choices: "",
 				}
 
 			])
 	}
 
 	function noMore () {
-		inquirer
-			.prompt([
-				{
-					type: "",
-					message: "",
-					name: "",
-				}
-			])
+	// this function will end prompt and send data to create cards
 	}
 
 	
