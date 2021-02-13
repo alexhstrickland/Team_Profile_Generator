@@ -110,3 +110,4 @@
 
 
 
+// need to write a for loop to dynamically add boostrap cards. Also will need if statements in order to diaplay appropriate icon for role
