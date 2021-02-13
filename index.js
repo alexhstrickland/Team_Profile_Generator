@@ -6,23 +6,23 @@
 		{
 			type: "input",
 			message: "Please enter the team manager's name: ",
-			name: "manName",	
+			name: "managerName",	
 		},
 		{
 			type: "input",
 			message: "Please enter the team manager's ID: ",
-			name: "manID",
+			name: "managerID",
 		},
 		{
 			type: "input",
 			message: "Please enter the team manager's office number: ",
-			name: "manNumber",
+			name: "managerNumber",
 		},
 		{
 			type: "list",
 			message: "Which team member would you like to add?",
 			name: "role",
-			choices: ["Engineer, Intern, No more team members"]
+			choices: ["Engineer", "Intern", "No more team members"]
 		}
 	])
 	.then(data => {
@@ -41,30 +41,30 @@
 		inquirer
 			.prompt([
 				{
-					type: "",
-					message: "",
-					name: "",
+					type: "input",
+					message: "Please enter the name of the engineer: ",
+					name: "engineerName",
 				},
 				{
-					type: "",
-					message: "",
-					name: "",
+					type: "input",
+					message: "Please enter the engineer's ID: ",
+					name: "engineerID",
 				},
 				{
-					type: "",
-					message: "",
-					name: "",
+					type: "input",
+					message: "Please enter the engineer's email: ",
+					name: "engineerEmail",
 				},
 				{
-					type: "",
-					message: "",
-					name: "",
+					type: "input",
+					message: "Please enter the engineer's GitHub username: ",
+					name: "engineerGitHub",
 				},
 				{
-					type: "",
-					message: "",
-					name: "",
-					choices: "",
+					type: "list",
+					message: "Which team member would you like to add?",
+					name: "role",
+					choices: ["Engineer", "Intern", "No more team members"],
 				}
 			])
 	}
@@ -73,30 +73,30 @@
 		inquirer
 			.prompt([
 				{
-					type: "",
-					message: "",
-					name: "",
+					type: "input",
+					message: "Please enter the name of the intern: ",
+					name: "internName",
 				},
 				{
-					type: "",
-					message: "",
-					name: "",
+					type: "input",
+					message: "Please enter the intern's ID: ",
+					name: "internID",
 				},
 				{
-					type: "",
-					message: "",
-					name: "",
+					type: "input",
+					message: "Please enter the intern's email: ",
+					name: "internEmail",
 				},
 				{
-					type: "",
-					message: "",
-					name: "",
+					type: "input",
+					message: "Please enter the intern's school: ",
+					name: "internSchool",
 				},
 				{
-					type: "",
-					message: "",
-					name: "",
-					choices: "",
+					type: "list",
+					message: "Which team member would you like to add?",
+					name: "role",
+					choices: ["Engineer", "Intern", "No more team members"],
 				}
 
 			])
