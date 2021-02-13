@@ -1,33 +1,55 @@
 // node index.js should trigger inquirer questions: "Please bui;d your team" team managers name, tm id, tm email, tm office number, which team member would you like to add? (choices), engineer or intern or i don't want to add anymore, 
 // engineer: name, id, email, github username
+
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const team = [];
+
 // intern: name, id, email, school
-function getInfo() {
+function begin() {
 	inquirer
 		.prompt([
 			{
 				type: "input",
 				message: "Please enter the team manager's name: ",
-				name: "managerName",	
+				name: "name",	
 			},
 			{
 				type: "input",
 				message: "Please enter the team manager's ID: ",
-				name: "managerID",
+				name: "id",
+			},
+			{
+				type: "input",
+				message: "Please enter the team manager's email: ",
+				name: "email",
 			},
 			{
 				type: "input",
 				message: "Please enter the team manager's office number: ",
-				name: "managerNumber",
+				name: "officeNumber",
 			},
+		])
+	.then(function({name, id, email, officeNumber}) {
+		let teamManager;
+		teamManager = new Manager(name, id, email, officeNumber);
+		team.push(teamManager);
+		choice();
+	});
+}
+
+function choice() {
+	inquirer
+		.prompt([
 			{
 				type: "list",
 				message: "Which team member would you like to add?",
 				name: "role",
-				choices: ["Engineer", "Intern", "No more team members"]
+				choices: ["Engineer", "Intern", "No more team members"],
 			}
 		])
 	.then(data => {
-			
 		if(data.role === "Engineer") {
 			engineerInfo();
 		} else if(data.role === "Intern") {
@@ -35,7 +57,6 @@ function getInfo() {
 		} else if(data.role === "No more team members") {
 			noMore();
 		}
-
 	})
 };
 
@@ -51,25 +72,25 @@ function engineerInfo() {
 			{
 				type: "input",
 				message: "Please enter the engineer's ID: ",
-				name: "engineerID",
+				name: "id",
 			},
 			{
 				type: "input",
 				message: "Please enter the engineer's email: ",
-				name: "engineerEmail",
+				name: "email",
 			},
 			{
 				type: "input",
 				message: "Please enter the engineer's GitHub username: ",
-				name: "engineerGitHub",
+				name: "github",
 			},
-			{
-				type: "list",
-				message: "Which team member would you like to add?",
-				name: "role",
-				choices: ["Engineer", "Intern", "No more team members"],
-			}
 		])
+		.then(function({name, id, email, gitHub}) {
+			let teamManager;
+			teamManager = new Manager(name, id, email, officeNumber);
+			team.push(teamManager);
+			choice();
+		});
 }
 
 function internInfo() {
@@ -110,7 +131,7 @@ function noMore () {
 }
 
 
-// getInfo();
+// getInfo
 
 
 
