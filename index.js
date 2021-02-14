@@ -31,12 +31,12 @@ function begin() {
 				name: "officeNumber",
 			},
 		])
-	.then(function({name, id, email, officeNumber}) {
-		let teamManager;
-		teamManager = new Manager(name, id, email, officeNumber);
-		team.push(teamManager);
-		choice();
-	});
+		.then(function({name, id, email, officeNumber}) {
+			let teamManager;
+			teamManager = new Manager(name, id, email, officeNumber);
+			team.push(teamManager);
+			choice();
+		});
 }
 
 function choice() {
@@ -67,7 +67,7 @@ function engineerInfo() {
 			{
 				type: "input",
 				message: "Please enter the name of the engineer: ",
-				name: "engineerName",
+				name: "name",
 			},
 			{
 				type: "input",
@@ -85,10 +85,10 @@ function engineerInfo() {
 				name: "github",
 			},
 		])
-		.then(function({name, id, email, gitHub}) {
-			let teamManager;
-			teamManager = new Manager(name, id, email, officeNumber);
-			team.push(teamManager);
+		.then(function({name, id, email, github}) {
+			let teamEngineer;
+			teamEngineer = new Engineer(name, id, email, github);
+			team.push(teamEngineer);
 			choice();
 		});
 }
@@ -99,31 +99,30 @@ function internInfo() {
 			{
 				type: "input",
 				message: "Please enter the name of the intern: ",
-				name: "internName",
+				name: "name",
 			},
 			{
 				type: "input",
 				message: "Please enter the intern's ID: ",
-				name: "internID",
+				name: "id",
 			},
 			{
 				type: "input",
 				message: "Please enter the intern's email: ",
-				name: "internEmail",
+				name: "email",
 			},
 			{
 				type: "input",
 				message: "Please enter the intern's school: ",
-				name: "internSchool",
+				name: "school",
 			},
-			{
-				type: "list",
-				message: "Which team member would you like to add?",
-				name: "role",
-				choices: ["Engineer", "Intern", "No more team members"],
-			}
-
 		])
+		.then(function({name, id, email, school}) {
+			let teamIntern;
+			teamIntern = new Intern(name, id, email, school);
+			team.push(teamIntern);
+			choice();
+		});
 }
 
 function noMore () {
