@@ -5,12 +5,11 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
+const fs = require("fs");
 const team = [];
 
 // intern: name, id, email, school
-function begin() {
-	inquirer
-		.prompt([
+const begin = () => {[
 			{
 				type: "input",
 				message: "Please enter the team manager's name: ",
@@ -31,7 +30,7 @@ function begin() {
 				message: "Please enter the team manager's office number: ",
 				name: "officeNumber",
 			},
-		])
+		]
 		.then(function({name, id, email, officeNumber}) {
 			let teamManager;
 			teamManager = new Manager(name, id, email, officeNumber);
@@ -40,7 +39,7 @@ function begin() {
 		});
 }
 
-function choice() {
+const choice = () => {
 	inquirer
 		.prompt([
 			{
@@ -49,8 +48,7 @@ function choice() {
 				name: "role",
 				choices: ["Engineer", "Intern", "No more team members"],
 			}
-		])
-	.then(data => {
+		]).then(data => {
 		if(data.role === "Engineer") {
 			engineerInfo();
 		} else if(data.role === "Intern") {
@@ -62,7 +60,7 @@ function choice() {
 };
 
 
-function engineerInfo() {
+const engineerInfo = () => {
 	inquirer
 		.prompt([
 			{
@@ -85,8 +83,7 @@ function engineerInfo() {
 				message: "Please enter the engineer's GitHub username: ",
 				name: "github",
 			},
-		])
-		.then(function({name, id, email, github}) {
+		]).then(function({name, id, email, github}) {
 			let teamEngineer;
 			teamEngineer = new Engineer(name, id, email, github);
 			team.push(teamEngineer);
@@ -94,7 +91,7 @@ function engineerInfo() {
 		});
 }
 
-function internInfo() {
+const internInfo = () => {
 	inquirer
 		.prompt([
 			{
@@ -117,8 +114,7 @@ function internInfo() {
 				message: "Please enter the intern's school: ",
 				name: "school",
 			},
-		])
-		.then(function({name, id, email, school}) {
+		]).then(function({name, id, email, school}) {
 			let teamIntern;
 			teamIntern = new Intern(name, id, email, school);
 			team.push(teamIntern);
@@ -126,13 +122,21 @@ function internInfo() {
 		});
 }
 
-function noMore () {
-// this function will end prompt and send data to create cards
+const noMore = () => {
+	let employeeCards = "";
+	for (var i=0; i < team.length; i++) {
+		employeeCards += generateCards(i);
+	}
+	const finalTeam = // need to add render function
+	
+	fs.writeFileSync('./dist/team.html', finalTeam)
 }
 
 
-begin();
-console.log(team);
+
+
+inquirer.prompt(begin());
+console.log(cards);
 
 
 

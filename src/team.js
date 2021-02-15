@@ -1,5 +1,4 @@
 function generateCards() {
-    for (var i = 0; i < team.length; i++) {
         if (i.getRole() === 'Manager') {
             return `
             <div class="card" style="width: 18rem;">
@@ -44,12 +43,7 @@ function generateCards() {
         </div>
         `
         }
-    };
 
-
-
-
-    return cards
 }
 
 function render() {
