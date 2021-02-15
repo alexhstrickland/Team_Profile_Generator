@@ -5,7 +5,7 @@ function generateCards() {
             <div class="card" style="width: 18rem;">
 	            <div class="card-header">
 	                <h5>${role.name}</h5>
-	                <h6>Manager</h6>
+	                <h6><i class="fas fa-coffee"></i>Manager</h6>
 	            </div>
 	            <ul class="list-group list-group-flush">
 	                <li class="list-group-item">${role.id}</li>
@@ -20,7 +20,7 @@ function generateCards() {
             <div class="card" style="width: 18rem;">
 	            <div class="card-header">
 	                <h5>${role.name}</h5>
-	                <h6>Enginneer</h6>
+	                <h6><i class="fas fa-glasses"></i>Enginneer</h6>
 	            </div>
 	            <ul class="list-group list-group-flush">
 	                <li class="list-group-item">${role.id}</li>
@@ -34,7 +34,7 @@ function generateCards() {
             return `<div class="card" style="width: 18rem;">
             <div class="card-header">
                 <h5>${role.name}</h5>
-                <h6>Intern</h6>
+                <h6><i class="fas fa-user-graduate"></i>Intern</h6>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">${role.id}</li>
