@@ -1,5 +1,12 @@
 function generateCards() {
-    
+    for (var i = 0; i < team.length; i++) {
+        if 
+    }
+
+
+
+
+    return cards
 }
 
 function render() {

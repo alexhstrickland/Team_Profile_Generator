@@ -1,0 +1,27 @@
+{
+  "name": "team_profile_generator",
+  "version": "1.0.0",
+  "description": "Command line application to generate employee cards for a team.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexhstrickland/Team_Profile_Generator.git"
+  },
+  "author": "Alex Strickland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexhstrickland/Team_Profile_Generator/issues"
+  },
+  "homepage": "https://github.com/alexhstrickland/Team_Profile_Generator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "jest": "^26.6.3"
+  }
+}
