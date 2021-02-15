@@ -9,7 +9,8 @@ const team = [];
 
 // intern: name, id, email, school
 function begin() {
-	inquirer.prompt([
+	inquirer
+		.prompt([
 			{
 				type: "input",
 				message: "Please enter the team manager's name: ",
@@ -40,7 +41,8 @@ function begin() {
 }
 
 function choice() {
-	inquirer.prompt([
+	inquirer
+		.prompt([
 			{
 				type: "list",
 				message: "Which team member would you like to add?",
@@ -61,7 +63,8 @@ function choice() {
 
 
 function engineerInfo() {
-	inquirer.prompt([
+	inquirer
+		.prompt([
 			{
 				type: "input",
 				message: "Please enter the name of the engineer: ",
@@ -92,7 +95,8 @@ function engineerInfo() {
 }
 
 function internInfo() {
-	inquirer.prompt([
+	inquirer
+		.prompt([
 			{
 				type: "input",
 				message: "Please enter the name of the intern: ",
@@ -128,7 +132,7 @@ function noMore () {
 
 
 begin();
-
+console.log(team);
 
 
 

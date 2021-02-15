@@ -1,6 +1,49 @@
 function generateCards() {
     for (var i = 0; i < team.length; i++) {
-        if 
+        if (i.getRole() === 'Manager') {
+            return `
+            <div class="card" style="width: 18rem;">
+	            <div class="card-header">
+	                <h5>${role.name}</h5>
+	                <h6>Manager</h6>
+	            </div>
+	            <ul class="list-group list-group-flush">
+	                <li class="list-group-item">${role.id}</li>
+	                <li class="list-group-item">${role.email}</li>
+	                <li class="list-group-item">${role.officeNumber}</li>
+	            </ul>
+            </div>
+            `
+        }
+        if (i.getRole() === 'Engineer') {
+            return `
+            <div class="card" style="width: 18rem;">
+	            <div class="card-header">
+	                <h5>${role.name}</h5>
+	                <h6>Enginneer</h6>
+	            </div>
+	            <ul class="list-group list-group-flush">
+	                <li class="list-group-item">${role.id}</li>
+	                <li class="list-group-item">${role.email}</li>
+	                <li class="list-group-item">${role.github}</li>
+	            </ul>
+            </div>
+            `
+        }
+        if (i.getRole() === 'Intern') {
+            return `<div class="card" style="width: 18rem;">
+            <div class="card-header">
+                <h5>${role.name}</h5>
+                <h6>Intern</h6>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">${role.id}</li>
+                <li class="list-group-item">${role.email}</li>
+                <li class="list-group-item">${role.school}</li>
+            </ul>
+        </div>
+        `
+        }
     };
 
 
