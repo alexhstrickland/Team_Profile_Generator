@@ -1,15 +1,15 @@
 // node index.js should trigger inquirer questions: "Please bui;d your team" team managers name, tm id, tm email, tm office number, which team member would you like to add? (choices), engineer or intern or i don't want to add anymore, 
 // engineer: name, id, email, github username
-const Employee = require("./lib/Employee");
+// const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const inquirer = require("inquirer");
 const team = [];
 
 // intern: name, id, email, school
 function begin() {
-	inquirer
-		.prompt([
+	inquirer.prompt([
 			{
 				type: "input",
 				message: "Please enter the team manager's name: ",
@@ -40,8 +40,7 @@ function begin() {
 }
 
 function choice() {
-	inquirer
-		.prompt([
+	inquirer.prompt([
 			{
 				type: "list",
 				message: "Which team member would you like to add?",
@@ -62,8 +61,7 @@ function choice() {
 
 
 function engineerInfo() {
-	inquirer
-		.prompt([
+	inquirer.prompt([
 			{
 				type: "input",
 				message: "Please enter the name of the engineer: ",
@@ -94,8 +92,7 @@ function engineerInfo() {
 }
 
 function internInfo() {
-	inquirer
-		.prompt([
+	inquirer.prompt([
 			{
 				type: "input",
 				message: "Please enter the name of the intern: ",
@@ -130,7 +127,7 @@ function noMore () {
 }
 
 
-// getInfo
+begin();
 
 
 
