@@ -127,46 +127,52 @@ const internInfo = () => {
 const generateCards = (emp) => {
 	if (emp.getRole() === 'Manager') {
 		return `
-				<div class="card" style="width: 18rem;">
+				<div class="card" style="width: 19rem;">
 					<div class="card-header">
-						<h5>${emp.name}</h5>
-						<h6><i class="fas fa-coffee"></i>Manager</h6>
+						<h3>${emp.name}</h3>
+						<h5><i class="fas fa-coffee"></i> Manager</h5>
 					</div>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">${emp.id}</li>
-						<li class="list-group-item"><a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
-						<li class="list-group-item">${emp.officeNumber}</li>
-					</ul>
+					<div class="card-body">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">ID: ${emp.id}</li>
+							<li class="list-group-item">Email: <a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
+							<li class="list-group-item">Phone: ${emp.officeNumber}</li>
+						</ul>
+					</div>
 				</div>
 		`
 	}
 	if (emp.getRole() === 'Engineer') {
 		return `
-				<div class="card" style="width: 18rem;">
+				<div class="card" style="width: 19rem;">
 					<div class="card-header">
-						<h5>${emp.name}</h5>
-						<h6><i class="fas fa-glasses"></i>Enginneer</h6>
+						<h3>${emp.name}</h3>
+						<h5><i class="fas fa-glasses"></i> Enginneer</h5>
 					</div>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">${emp.id}</li>
-						<li class="list-group-item"><a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
-						<li class="list-group-item"><a href='https://github.com/'${emp.github}>${emp.github}</a></li>
-					</ul>
+					<div class="card-body">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">ID: ${emp.id}</li>
+							<li class="list-group-item">Email: <a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
+							<li class="list-group-item">GitHub: <a href='https://github.com/'${emp.github}>${emp.github}</a></li>
+						</ul>
+					</div>	
 				</div>
 		`
 	}
 	if (emp.getRole() === 'Intern') {
 		return `
-					<div class="card" style="width: 18rem;">
+					<div class="card" style="width: 19rem;">
 						<div class="card-header">
-							<h5>${emp.name}</h5>
-							<h6><i class="fas fa-user-graduate"></i>Intern</h6>
+							<h3>${emp.name}</h3>
+							<h5><i class="fas fa-user-graduate"></i> Intern</h5>
 						</div>
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item">${emp.id}</li>
-							<li class="list-group-item"><a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
-							<li class="list-group-item">${emp.school}</li>
-						</ul>
+						<div class="card-body">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">ID: ${emp.id}</li>
+								<li class="list-group-item">Email: <a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
+								<li class="list-group-item">School: ${emp.school}</li>
+							</ul>
+						</div>	
 					</div>
 		`
 	}
