@@ -29,7 +29,7 @@
   ``` 
   You will then be prompted to answer a series of questions about your team. When finished, your file will automatically be saved to the ./dist directory where you can access.  
 
-  [Team_Profile_Generator](assets/images/screenshot_website.png)
+  ![Team_Profile_Generator](assets/images/screenshot_website.png)
 
   [Application Demo](https://drive.google.com/file/d/1eu2ZBF1AElmRSAgc9IBKltOakck65vBd/view)
 
