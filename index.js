@@ -12,22 +12,54 @@ const begin = [
 			{
 				type: "input",
 				message: "Please enter the team manager's name: ",
-				name: "name",	
+				name: "name",
+				validate: userName => {
+					if (userName) {
+						return true;
+					} else {
+						console.log("Must enter a name!")
+						return false;
+					}
+				}
 			},
 			{
 				type: "input",
 				message: "Please enter the team manager's ID: ",
 				name: "id",
+				validate: userId => {
+					if (userId) {
+						return true;
+					} else {
+						console.log("Must enter an id!");
+						return false;
+					}
+				}
 			},
 			{
 				type: "input",
 				message: "Please enter the team manager's email: ",
 				name: "email",
+				validate: userEmail => {
+					if (userEmail) {
+						return true;
+					} else {
+						console.log("Must enter an email address!");
+						return false;
+					}
+				}
 			},
 			{
 				type: "input",
 				message: "Please enter the team manager's office number: ",
 				name: "officeNumber",
+				validate: userNumber => {
+					if (userNumber) {
+						return true;
+					} else {
+						console.log("Must enter an office number!");
+						return false;
+					}
+				}
 			},
 ];
 
@@ -73,21 +105,53 @@ const engineerInfo = () => {
 				type: "input",
 				message: "Please enter the name of the engineer: ",
 				name: "name",
+				validate: userName => {
+					if (userName) {
+						return true;
+					} else {
+						console.log("Must enter a name!")
+						return false;
+					}
+				}
 			},
 			{
 				type: "input",
 				message: "Please enter the engineer's ID: ",
 				name: "id",
+				validate: userId => {
+					if (userId) {
+						return true;
+					} else {
+						console.log("Must enter an id!");
+						return false;
+					}
+				}
 			},
 			{
 				type: "input",
 				message: "Please enter the engineer's email: ",
 				name: "email",
+				validate: userEmail => {
+					if (userEmail) {
+						return true;
+					} else {
+						console.log("Must enter an email address!");
+						return false;
+					}
+				}
 			},
 			{
 				type: "input",
 				message: "Please enter the engineer's GitHub username: ",
 				name: "github",
+				validate: userGithub => {
+					if (userGithub) {
+						return true;
+					} else {
+						console.log("Must enter GitHub username!");
+						return false;
+					}
+				}
 			},
 		]).then(function({name, id, email, github}) {
 			let teamEngineer;
@@ -105,21 +169,53 @@ const internInfo = () => {
 				type: "input",
 				message: "Please enter the name of the intern: ",
 				name: "name",
+				validate: userName => {
+					if (userName) {
+						return true;
+					} else {
+						console.log("Must enter a name!")
+						return false;
+					}
+				}
 			},
 			{
 				type: "input",
 				message: "Please enter the intern's ID: ",
 				name: "id",
+				validate: userId => {
+					if (userId) {
+						return true;
+					} else {
+						console.log("Must enter an id!");
+						return false;
+					}
+				}
 			},
 			{
 				type: "input",
 				message: "Please enter the intern's email: ",
 				name: "email",
+				validate: userEmail => {
+					if (userEmail) {
+						return true;
+					} else {
+						console.log("Must enter an email address!");
+						return false;
+					}
+				}
 			},
 			{
 				type: "input",
 				message: "Please enter the intern's school: ",
 				name: "school",
+				validate: userSchool => {
+					if (userSchool) {
+						return true;
+					} else {
+						console.log("Must enter a school name!");
+						return false;
+					}
+				}
 			},
 		]).then(function({name, id, email, school}) {
 			let teamIntern;
