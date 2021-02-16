@@ -1,22 +1,27 @@
+/* properties for entire page */
 * {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* jumbotron properties */
 .jumbotron {
     background-color: #f53b47;
     color: white;
 }
 
+/* card header properties */
 .card-header {
     background-color: #2264d6;
     color: white;
 }
 
+/* card properties */
 .card {
     margin: 15px;
     box-shadow: 2px 2px 5px gray;
 }
 
+/* card body properties */
 .card-body {
     font-size: .99rem !important;
 }

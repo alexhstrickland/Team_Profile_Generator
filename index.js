@@ -1,5 +1,4 @@
 
-// const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -8,6 +7,7 @@ const fs = require("fs");
 const render = require("./src/team")
 const team = [];
 
+// first prompt for users input
 const begin = [
 			{
 				type: "input",
@@ -30,7 +30,8 @@ const begin = [
 				name: "officeNumber",
 			},
 ];
-		
+
+// function to push team manager in the team array
 questions().then(function({name, id, email, officeNumber}) {
 	let teamManager;
 	teamManager = new Manager(name, id, email, officeNumber);
@@ -38,10 +39,12 @@ questions().then(function({name, id, email, officeNumber}) {
 	choice();
 });
 
+// initial function to call first prompt
 function questions() {
 	return inquirer.prompt(begin);
 }
 
+// prompt that decides which role to navigate
 const choice = () => {
 	inquirer
 		.prompt([
@@ -62,7 +65,7 @@ const choice = () => {
 	})
 };
 
-
+//  prompt for engineer information
 const engineerInfo = () => {
 	inquirer
 		.prompt([
@@ -94,6 +97,7 @@ const engineerInfo = () => {
 		});
 }
 
+// prompt for intern information
 const internInfo = () => {
 	inquirer
 		.prompt([
@@ -124,6 +128,8 @@ const internInfo = () => {
 			choice();
 		});
 }
+
+// function to generate bootstrap cards for each role
 const generateCards = (emp) => {
 	if (emp.getRole() === 'Manager') {
 		return `
@@ -147,7 +153,7 @@ const generateCards = (emp) => {
 				<div class="card" style="width: 19rem;">
 					<div class="card-header">
 						<h3>${emp.name}</h3>
-						<h5><i class="fas fa-glasses"></i> Enginneer</h5>
+						<h5><i class="fas fa-glasses"></i> Engineer</h5>
 					</div>
 					<div class="card-body">
 						<ul class="list-group list-group-flush">
@@ -179,6 +185,7 @@ const generateCards = (emp) => {
 
 }
 
+// function to end prompt when user selects to not add anymore employees
 const noMore = () => {
 	const teamArray = team;
 	let employeeCards = "";
@@ -192,9 +199,6 @@ const noMore = () => {
 	console.log(finalTeam);
 	
 	fs.writeFileSync('./dist/team.html', finalTeam)
-
 }
-
-// need to write a for loop to dynamically add boostrap cards. Also will need if statements in order to diaplay appropriate icon for role
 
 

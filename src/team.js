@@ -1,4 +1,6 @@
 const employeeCards = require("../index");
+
+// function to render HTML and add in generated cards
 function render(employeeCards) {
     return `
     <html>
