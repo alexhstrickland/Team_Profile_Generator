@@ -134,7 +134,7 @@ const generateCards = (emp) => {
 					</div>
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item">${emp.id}</li>
-						<li class="list-group-item">${emp.email}</li>
+						<li class="list-group-item"><a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
 						<li class="list-group-item">${emp.officeNumber}</li>
 					</ul>
 				</div>
@@ -149,8 +149,8 @@ const generateCards = (emp) => {
 					</div>
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item">${emp.id}</li>
-						<li class="list-group-item">${emp.email}</li>
-						<li class="list-group-item">${emp.github}</li>
+						<li class="list-group-item"><a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
+						<li class="list-group-item"><a href='https://github.com/'${emp.github}>${emp.github}</a></li>
 					</ul>
 				</div>
 		`
@@ -164,7 +164,7 @@ const generateCards = (emp) => {
 						</div>
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item">${emp.id}</li>
-							<li class="list-group-item">${emp.email}</li>
+							<li class="list-group-item"><a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
 							<li class="list-group-item">${emp.school}</li>
 						</ul>
 					</div>
