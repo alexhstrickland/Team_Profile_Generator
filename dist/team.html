@@ -1,6 +1,4 @@
-const employeeCards = require("../index");
-function render(employeeCards) {
-    return `
+
     <html>
     <head>
         <title>Page</title>
@@ -16,13 +14,22 @@ function render(employeeCards) {
         </div>
         <div class="container">
             <div class="wrapper">
-                    <div class="row">${employeeCards}</div>
+                    <div class="row">
+				<div class="card" style="width: 18rem;">
+					<div class="card-header">
+						<h5>asdfsd</h5>
+						<h6><i class="fas fa-coffee"></i>Manager</h6>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">dfsdf</li>
+						<li class="list-group-item">d</li>
+						<li class="list-group-item">s</li>
+					</ul>
+				</div>
+		</div>
             </div>
             
         </div>
     </body>
     <html>
-    `
-}
-
-module.exports = render;
+    
