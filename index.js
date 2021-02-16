@@ -255,7 +255,7 @@ const generateCards = (emp) => {
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item">ID: ${emp.id}</li>
 							<li class="list-group-item">Email: </br><a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
-							<li class="list-group-item">GitHub: <a href='https://github.com/'${emp.github}>${emp.github}</a></li>
+							<li class="list-group-item">GitHub: <a href='https://github.com/${emp.github}'>${emp.github}</a></li>
 						</ul>
 					</div>	
 				</div>
@@ -291,8 +291,6 @@ const noMore = () => {
 		employeeCards += generateCards(emp);
 	}
 	const finalTeam = render(employeeCards);
-
-	console.log(finalTeam);
 	
 	fs.writeFileSync('./dist/team.html', finalTeam)
 }
