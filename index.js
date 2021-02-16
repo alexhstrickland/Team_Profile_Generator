@@ -6,10 +6,11 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
+const render = require("./src/team")
 const team = [];
 
 // intern: name, id, email, school
-const begin = () => {[
+const begin = [
 			{
 				type: "input",
 				message: "Please enter the team manager's name: ",
@@ -30,13 +31,17 @@ const begin = () => {[
 				message: "Please enter the team manager's office number: ",
 				name: "officeNumber",
 			},
-		]
-		.then(function({name, id, email, officeNumber}) {
-			let teamManager;
-			teamManager = new Manager(name, id, email, officeNumber);
-			team.push(teamManager);
-			choice();
-		});
+];
+		
+questions().then(function({name, id, email, officeNumber}) {
+	let teamManager;
+	teamManager = new Manager(name, id, email, officeNumber);
+	team.push(teamManager);
+	choice();
+});
+
+function questions() {
+	return inquirer.prompt(begin);
 }
 
 const choice = () => {
@@ -121,24 +126,73 @@ const internInfo = () => {
 			choice();
 		});
 }
-
-const noMore = () => {
-	let employeeCards = "";
-	for (var i=0; i < team.length; i++) {
-		employeeCards += generateCards(i);
+const generateCards = (emp) => {
+	if (emp.getRole() === 'Manager') {
+		return `
+		<div class="card" style="width: 18rem;">
+			<div class="card-header">
+				<h5>${emp.name}</h5>
+				<h6><i class="fas fa-coffee"></i>Manager</h6>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">${emp.id}</li>
+				<li class="list-group-item">${emp.email}</li>
+				<li class="list-group-item">${emp.officeNumber}</li>
+			</ul>
+		</div>
+		`
 	}
-	const finalTeam = // need to add render function
-	
-	fs.writeFileSync('./dist/team.html', finalTeam)
+	if (emp.getRole() === 'Engineer') {
+		return `
+		<div class="card" style="width: 18rem;">
+			<div class="card-header">
+				<h5>${emp.name}</h5>
+				<h6><i class="fas fa-glasses"></i>Enginneer</h6>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">${emp.id}</li>
+				<li class="list-group-item">${emp.email}</li>
+				<li class="list-group-item">${emp.github}</li>
+			</ul>
+		</div>
+		`
+	}
+	if (emp.getRole() === 'Intern') {
+		return `
+		<div class="card" style="width: 18rem;">
+			<div class="card-header">
+				<h5>${emp.name}</h5>
+				<h6><i class="fas fa-user-graduate"></i>Intern</h6>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">${emp.id}</li>
+				<li class="list-group-item">${emp.email}</li>
+				<li class="list-group-item">${emp.school}</li>
+			</ul>
+		</div>
+		`
+	}
+
 }
 
+const noMore = () => {
+	const teamArray = team;
+	let employeeCards = "";
+	
+	for (i in teamArray) {
+		const emp = teamArray[i];
+		employeeCards += generateCards(emp);
+		// console.log(employeeCards);
+	}
 
-
-
-inquirer.prompt(begin());
-console.log(cards);
-
-
+	console.log(employeeCards);
+	const finalArray = employeeCards;
+	const finalTeam = render(finalArray);
+	console.log(finalTeam);
+	
+	
+	// fs.writeFileSync('./dist/team.html', finalTeam)
+}
 
 // need to write a for loop to dynamically add boostrap cards. Also will need if statements in order to diaplay appropriate icon for role
 
