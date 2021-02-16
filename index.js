@@ -141,7 +141,7 @@ const generateCards = (emp) => {
 					<div class="card-body">
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item">ID: ${emp.id}</li>
-							<li class="list-group-item">Email: <a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
+							<li class="list-group-item">Email: </br><a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
 							<li class="list-group-item">Phone: ${emp.officeNumber}</li>
 						</ul>
 					</div>
@@ -158,7 +158,7 @@ const generateCards = (emp) => {
 					<div class="card-body">
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item">ID: ${emp.id}</li>
-							<li class="list-group-item">Email: <a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
+							<li class="list-group-item">Email: </br><a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
 							<li class="list-group-item">GitHub: <a href='https://github.com/'${emp.github}>${emp.github}</a></li>
 						</ul>
 					</div>	
@@ -175,7 +175,7 @@ const generateCards = (emp) => {
 						<div class="card-body">
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item">ID: ${emp.id}</li>
-								<li class="list-group-item">Email: <a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
+								<li class="list-group-item">Email: </br><a href = 'mailto: ${emp.email}'>${emp.email}</a></li>
 								<li class="list-group-item">School: ${emp.school}</li>
 							</ul>
 						</div>	
